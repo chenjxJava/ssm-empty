@@ -1,0 +1,47 @@
+@charset "utf-8";
+/* CSS Document */
+ 
+.land_inp{
+	 height:40px;
+	 width:300px;
+	 border-radius:3px;
+	 border:solid 1px #c1c1c1;
+	 background:url(../../../resource/IMG/user/login_id.png) no-repeat 15px;
+	 margin-left:20px;
+	 margin-top:20px;
+	 padding-left:50px;
+	 }
+.land_inp1{
+	 height:40px;
+	 width:300px;
+	 border-radius:3px;
+	 border:solid 1px #c1c1c1;
+	 background: url(../../../resource/IMG/user/login_password.png) no-repeat 15px;
+	 margin-left:20px;
+	 margin-top:20px;
+	 padding-left:50px;
+	 }
+.land_inp2{
+	 height:40px;
+	 width:300px;
+	 margin-left:20px;
+	 margin-top:20px;
+	 padding-left:50px;
+	 font-size:14px;
+	 color:red;
+	 }  
+.land_btn{
+	width:310px;
+	height:40px; 
+	background-color:#508ff1; 
+	border-radius:4px;
+	margin-left:20px; 
+	color:#ffffff; 
+	font-size:14px; 
+	text-align:center; 
+	line-height:40px;
+	}
+	
+.land_img{ height:20px; font-size:14px; color:#4d4d4d; float:left}
+	 
+	 

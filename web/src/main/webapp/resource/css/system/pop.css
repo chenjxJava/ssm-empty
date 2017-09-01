@@ -1,0 +1,117 @@
+@charset "utf-8";
+/* CSS Document */
+.popup_background{
+	position: fixed;
+	z-index: 2000;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(51,51,51,0.3);
+	}
+.popup_content{
+	width: 350px;
+	position: absolute;
+	z-index:3000; 
+	background-color:#FFF; 
+	left: 38%; 
+	top:20%; 
+	border-radius: 5px;
+	display:none;
+	}
+.popup_top{
+	width:100%; 
+	float:left;
+	}
+.popup_top_t{
+	width:100%; 
+	float:left;
+	height:35px;
+	line-height:35px;
+	font-size:18px;
+	color:#333;
+	font-weight:bold;
+	text-align:center;
+	}
+.popup_top_c{
+	width:15px; 
+	float: right;
+	height:15px;
+	margin-top:3px;
+	margin-right:10px;
+	cursor: pointer;
+	}
+.popup_top_text{
+	width:100%; 
+	float:left;
+	}
+.popup_top_text1{
+	width:30%;
+	float:left;
+	height:30px;
+	font-size:14px;
+	text-align:right;
+	line-height:30px;
+	}
+.popup_top_text2{
+	width:60%;
+	float:left;
+	font-size:14px;
+	text-align:left;
+	line-height:30px;
+	}
+.popup_input2{
+	width:200px;
+	height:25px;
+	line-height:25px;
+}
+.popup_input{
+	width:200px;
+	height:60px;
+}
+.popup_select{
+	width:90px;
+	height:25px;
+}
+.popup_top_bunnt{
+	margin:auto;
+	width:90px;
+	height:30px;
+	text-align:center;
+	line-height:30px;
+	font-size:16px;
+	color:#FFF;
+	margin-top:10px;
+	background-color:#666;
+	border-radius: 3px;
+	cursor: pointer;
+	}
+
+
+.popup_top_ts{
+	width:100%;
+	height:40px;
+	float:left;
+	font-size:14px;
+	text-align: center;
+	line-height:40px;
+	font-size:16px;
+	}
+.popup_ok{
+	margin:auto;
+	width:90px;
+	height:30px;
+	text-align:center;
+	line-height:30px;
+	font-size:16px;
+	color:#FFF;
+	margin-top:10px;
+	background-color:#666;
+	border-radius: 3px;
+	cursor: pointer;
+	}
+.popup_top_ps{
+	width:100%;
+	height:20px;
+	float:left;
+	}

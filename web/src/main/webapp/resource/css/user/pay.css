@@ -1,0 +1,114 @@
+@charset "utf-8";
+/* CSS Document */ 
+.pay_top{
+	height:50px;
+	width:1024px;
+	font-size:18px;
+	color:#4d4d4d;
+	border-bottom:1px solid #9abaeb;
+	line-height:50px;
+	}
+.pay_name{
+	height:40px;
+	width:1024px;
+	line-height:40px;
+	}
+.pay_name2{
+	width:1024px;
+	}
+.pay_text1{
+	height:40px;
+	line-height:40px;
+	font-size:14px;
+	color:#4d4d4d;
+	float:left;
+	margin-left:20px;
+	}
+.pay_text2{
+	height:40px;
+	line-height:40px;
+	font-size:14px;
+	color:#4d4d4d;
+	float:left;
+	}
+.pay_text3{
+	height:40px;
+	line-height:40px;
+	font-size:14px;
+	color:#4d4d4d;
+	float:right;
+	margin-right:20px;
+	}
+.pay_pw{
+	height:30px; 
+	width:120px;
+	margin-left:10px;
+	margin-top:5px;
+	font-size:20px;
+	}
+.cash_card{
+	width:900px;
+	height:70px;
+	margin:auto;
+	margin-top:10px;
+	border:1px #d4d4d4 solid; 
+	border-radius:4px;
+	background-color:#ffffff;
+	cursor: pointer;
+	}
+.cash_card_d{
+	width:898px;
+	height:69px;
+	margin:auto;
+	margin-top:10px;
+	border:1px #0080ff solid; 
+	border-radius:4px;
+	background-color:#ffffff;
+	cursor: pointer;
+	}
+.card_img{
+	height:25px;
+	 margin-top:10px;
+	 margin-left:20px;
+	}
+.card_tex{
+	color:4d4d4d;
+	font-size:12px;
+	margin-bottom:10px;
+	margin-left:10px;
+	}
+
+.pay_inf{
+	font-size:16px; 
+	color:#4d4d4d;
+	margin-left:10px;
+	}
+	
+.yanzheng{
+	height:30px;
+	 width:100px; 
+	 border-radius:2px; 
+	 font-size:14px; 
+	 text-align:center; 
+	 line-height:30px; 
+	 color:#ffffff;
+	 background-color:#5492F2; 
+	 float:right; 
+	 margin-left:20px; 
+	 margin-top:5px;
+	 cursor:pointer;
+	  }
+.zhifu{
+	 height:30px;
+	 width:100px; 
+	 border-radius:2px; 
+	 font-size:14px; 
+	 text-align:center; 
+	 line-height:30px; 
+	 color:#ffffff;
+	 background-color:#5492F2; 
+	 float:right; 
+	 margin-right:50px; 
+	 margin-top:5px;
+	 cursor:pointer;
+	  }

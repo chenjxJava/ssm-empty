@@ -1,0 +1,198 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	margin:0;
+	font-family:"微软雅黑";
+	}
+.top{
+	width:100%;
+	height:24px;
+	background-color:#82BBF8;
+	}
+.top_div{
+	width:1024px;
+	height:24px;
+	margin:auto;
+	background-color:#82BBF8;
+	}
+.top_div_user{
+	float:right;
+	height:24px;
+	color:#E2EEFF;
+	font-size:14px;
+	line-height:24px;
+	cursor: pointer;
+	}
+.top_div_contact{
+	float:right;
+	height:100%;
+	color:#FFFFFF;
+	font-size:14px;
+	line-height:24px;
+	text-align:center;
+	margin-left:40px;
+	cursor: pointer;
+	}
+.top_div_exit{
+	float:right;
+	height:100%;
+	color:#FFFFFF;
+	font-size:14px;
+	line-height:24px;
+	text-align:center;
+	margin-left:20px;
+	margin-right:10px;
+	cursor: pointer;
+	}
+.menu{
+	width:100%;
+	height:70px;
+	background-color:#82BBF8;
+	}
+.menu_{
+	width:1024px;
+	height:70px;
+	margin:auto;
+	}
+.menu_div{
+	width:570px;
+	height:50px;
+	float:right;
+	margin-right:10px;
+	margin-top:10px;
+	}
+.menu_div_logo{
+	width:160px;
+	height:34px;
+	float:left;
+	margin-top:10px;
+	margin-left:12px;
+	}
+.menu_div_menu{
+	width:140px;
+	height:40px;
+	float:right;
+	text-align:center;
+	line-height:40px;
+	font-size:18px;
+	font-weight:100;
+	margin-top:15px;
+	cursor: pointer;
+	color:#FFFFFF;
+	}
+.menu_div_menu_select{
+	width:140px;
+	float:right;
+	text-align:center;
+	margin-top:15px;
+	background-color:#ff0000;
+	}
+.menu_div_menu_select1{
+	width:140px;
+	height:40px;
+	float:right;
+	text-align:center;
+	line-height:40px;
+	font-size:20px;
+	font-weight:bold;
+	cursor: pointer;
+	color:#FFFFFF;
+	background-color:#999;
+	}
+.menu_div_menu_select2{
+	width:140px;
+	float:right;
+	text-align:center;
+	line-height:40px;
+	font-size:20px;
+	font-weight:bold;
+	cursor: pointer;
+	color:#FFFFFF;
+	background-color:#666;
+	display:none;
+	}
+.menu_div_menu_select21{
+	width:140px;
+	height:40px;
+	float:right;
+	text-align:center;
+	line-height:40px;
+	font-size:20px;
+	font-weight:bold;
+	cursor: pointer;
+	color:#FFFFFF;
+	background-color:#333;
+	}
+.menu_div_menu_selected{
+	width:140px;
+	height:40px;
+	float:right;
+	text-align:center;
+	line-height:40px;
+	font-size:20px;
+	font-weight:bold;
+	margin-top:15px;
+	cursor: pointer;
+	color:#FFFFFF;
+	}
+.blank{
+	width:100%;
+	height:20px;
+	}
+.blank2{
+	width:100%;
+	height:60px;
+	}
+.container{
+	width:100%;
+	}
+.container_div{
+	width:1024px;
+	margin:auto;
+	}
+.bottom{
+	width:100%;
+	height:30px;
+	position:fixed;
+	bottom:0px;
+	background-color:#FFF;
+	}
+.bottom_div{
+	height:30px;
+	margin:auto;
+	}
+.bottom-text{
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	margin:auto;
+	font-size:14px;
+	}
+.bottom-img{
+	width:390px;
+	margin:auto;
+	}
+	
+.date_selector, .date_selector *{width: auto;height: auto;border: none;background: none;margin: 0;padding: 0;text-align: left;text-decoration: none;}
+.date_selector{background:#fbfbfb;border: 1px solid #ccc;padding: 10px;margin:0;margin-top:-1px;position: absolute;z-index:100000;display:none;border-radius: 3px;box-shadow: 0 0 5px #aaa;box-shadow:0 2px 2px #ccc; width:220px;}
+.date_selector_ieframe{position: absolute;z-index: 99999;display: none;}
+.date_selector .nav{width: 17.5em;}
+.date_selector .nav p{clear: none;}
+.date_selector .month_nav, .date_selector .year_nav{margin: 0 0 3px 0;padding: 0;display: block;position: relative;text-align: center;}
+.date_selector .month_nav{float: left;width: 55%;}
+.date_selector .year_nav{float: right;width: 42%;margin-right: -8px;}
+.date_selector .month_name, .date_selector .year_name{font-weight: bold;line-height: 20px;}
+.date_selector .button{display: block;position: absolute;top: 0;width:18px;height:18px;line-height:16px;font-weight:bold;color:#5985c7;text-align: center;font-size:12px;overflow:hidden;border: 1px solid #ccc;border-radius:2px;}
+.date_selector .button:hover, .date_selector .button.hover{background:#5985c7;color: #fff;cursor: pointer;border-color:#3a930d;}
+.date_selector .prev{left: 0;}
+.date_selector .next{right: 0;}
+.date_selector table{border-spacing: 0;border-collapse: collapse;clear: both;margin: 0; width:220px;}
+.date_selector th, .date_selector td{width: 2.5em;height: 2em;padding: 0 !important;text-align: center !important;color: #666;font-weight: normal;}
+.date_selector th{font-size: 12px;}
+.date_selector td{border:1px solid #f1f1f1;line-height: 2em;text-align: center;white-space: nowrap;color:#5985c7;background: #fff;}
+.date_selector td.today{background: #eee;}
+.date_selector td.unselected_month{color: #ccc;}
+.date_selector td.selectable_day{cursor: pointer;}
+.date_selector td.selected{background:#2b579a;color: #fff;font-weight: bold;}
+.date_selector td.selectable_day:hover, .date_selector td.selectable_day.hover{background:#5985c7;color: #fff;}
+	

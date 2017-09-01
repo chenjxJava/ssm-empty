@@ -1,0 +1,142 @@
+@charset "utf-8";
+/* CSS Document */
+.manage_title{
+	height:54px; 
+	border-bottom:#9abaeb solid 1px;}
+	 
+.manage_bg{
+	 height:200px; 
+	 width:511px;
+	  background-color:#eaf1fb;
+	  }
+	  
+.manage_bg1{
+	 height:150px; 
+	 width:340px;
+	  background-color:#eaf1fb;
+	  margin-top:2px;
+	  }
+	  
+.manage_bg2{
+	 height:200px; 
+	 width:1024px;
+	  background-color:#eaf1fb;
+	  margin-top:2px;
+	  }
+	  
+.manage_tfont{
+	font-size:18px;
+	 color:#4d4d4d;
+	  margin-left:20px; 
+	  float:left; 
+	  line-height:54px;
+	}
+	
+.manage_yuan{
+	font-size:14px;
+	 color:#4d4d4d;
+	  float:right;
+	   margin-right:20px; 
+	   line-height:54px;
+	   }
+	   
+.manage_num{
+	 text-align:center;
+	  line-height:80px;
+	   font-size:45px; 
+	   color:#5492f2;
+	   }
+
+.manage_inp{
+	height:30px;
+	width:140px;
+	background-color:#ffffff;;
+	border:solid 1px #c3c3c3;
+	color:#a8a8a8;
+	font-size:12px;}
+	
+.manage_inp2{
+	height:30px;
+	width:312px;
+	background-color:#ffffff;;
+	border:solid 1px #c3c3c3;
+	color:#a8a8a8;
+	font-size:12px;}
+
+.manage_sel{
+	color:#5492f2;
+	 font-size:14px; 
+	 margin-left:20px; 
+	 cursor: pointer;}
+	 
+.manage_info_zj_bunt1{
+	width:80px;
+	height:30px;
+	background-color:#5492F2;
+	color:#FFF;
+	text-align:center;
+	line-height:30px;
+	font-size:14px;
+	border-radius: 2px;
+	cursor: pointer;
+	}
+.manage_info_zj_bunt2{
+	width:80px;
+	height:30px;
+	background-color:#FFC286;
+	color:#FFF;
+	text-align:center;
+	line-height:30px;
+	font-size:14px;
+	border-radius: 2px;
+	cursor: pointer;
+	}	
+.table-head{
+	color:#222;
+	}
+.table-head table{
+	width:100%;
+	}
+.table-body{
+	color:#000;
+	font-size:13px;
+	}
+.table-body table{
+	width:100%;
+	border-bottom:1px solid #D9D9D9;
+	}
+td{
+	text-align:center;
+	height:40px;
+	font-size:14px;
+	}
+.div_search_data{
+	width:100%;
+	}
+.bunnt_div{
+	width:100%;
+	height:25px;
+}
+.bunnt_mx1{
+	width:50px;
+	height:25px;
+	float:left;
+	line-height:25px;
+	border:1px solid #82BBF8;
+	margin-left:25px;
+	border-radius: 5px;
+}
+.bunnt_mx2{
+	width:50px;
+	height:25px;
+	float:left;
+	line-height:25px;
+	border:1px solid #82BBF8;
+	margin-left:10px;
+	border-radius: 5px;
+}
+
+
+
+
+

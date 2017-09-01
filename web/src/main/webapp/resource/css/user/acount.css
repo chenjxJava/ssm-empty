@@ -1,0 +1,28 @@
+@charset "utf-8";
+/* CSS Document */
+
+.information_tips{
+	height:30px;
+	width:332px; 
+	background-color:#fff7d1;
+	border:solid 1px #eae2be;
+	 float: right; 
+	 margin-right:300px; 
+	 font-size:14px; 
+	 padding-left:10px; 
+	 line-height:30px; 
+	 color:#838383; 
+	} 
+	
+.information_top{
+	height:53px;
+	width:1024;
+	font-size:18px;
+	color:#4d4d4d;
+	border-bottom:1px solid #9abaeb;
+	line-height:53px;}
+	
+.information_font{
+	font-size:14px;
+	color:#4d4d4d;
+	margin-bottom:20px;} 

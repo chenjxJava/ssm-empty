@@ -1,0 +1,121 @@
+@charset "utf-8";
+/* CSS Document */
+
+.cash_info{
+	width:1024px;
+	
+	} 
+.cash_title{
+	color:#373737;
+	width:100%;
+	height:35px;
+	border-bottom:1px solid #82BBF8;
+	margin-top:5px;
+	line-height:35px;
+	font-size:16px;
+	}
+
+.cash_tips{
+	height:30px;
+	width:500px; 
+	background-color:#fff7d1;
+	border:solid 1px #eae2be;
+	 float: left; 
+	 margin-left:20px; 
+	 font-size:14px; 
+	 padding-left:10px; 
+	 line-height:30px; 
+	 color:#838383; 
+	}
+
+.cash_color{
+	color:#ff2800;
+	}
+	
+.cash_blank{
+	width:100%;
+	height:30px;
+	}
+	
+.cash_choose{
+	font-size:14px;
+	color:#4D4d4d;
+	}
+
+.cash_card{
+	width:220px;
+	height:70px;
+	border:1px #d4d4d4 solid; 
+	border-radius:4px;
+	background-color:#ffffff;
+	cursor: pointer;
+	margin-top:20px;
+	}	
+.card_img{
+	height:25px;
+	 margin-top:10px;
+	 margin-left:20px;
+	}
+.card_tex{
+	color:4d4d4d;
+	font-size:12px;
+	margin-bottom:10px;margin-left:10px;}
+	
+.left{
+	float:left;}
+	
+.cash_inp{
+	height:30px;
+	width:180px;
+	background-color:#ffffff;;
+	border:solid 1px #c3c3c3;
+	color:#a8a8a8;
+	font-size:12px;
+	}
+.cash_inp_pwd{
+	height:30px;
+	width:30px;
+	background-color:#ffffff;;
+	border:solid 1px #c3c3c3;
+	color:#a8a8a8;
+	font-size:12px;
+	}
+.cash_info_zj_bunt{
+	width:100%;
+	height:30px;
+	}
+.cash_info_zj_bunt1{
+	width:80px;
+	height:30px;
+	background-color:#F71F1B;
+	color:#FFF;
+	text-align:center;
+	line-height:30px;
+	font-size:14px;
+	border-radius: 2px;
+	cursor: pointer;
+	
+	}
+.cash_info_zj_bunt2{
+	width:80px;
+	height:30px;
+	background-color:#bababa;
+	color:#FFF;
+	text-align:center;
+	line-height:30px;
+	font-size:14px;
+	border-radius: 2px;
+	cursor: pointer;
+	
+	}
+	
+.cash_tips2{
+	color:#e44042;
+	font-size:20px;
+	text-align:center;
+	}
+.cash_skip{
+	color:#5492f2;
+	font-size:20px;
+	text-align:center;
+	cursor: pointer;}
