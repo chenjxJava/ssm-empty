@@ -38,14 +38,5 @@ public class TestController {
 		return response.success(user);
 	}
 
-	@RequestMapping("/toLogin.html")
-	public String toLogin() {
-		return "login";
-	}
-
-	@RequestMapping("/toLogin2.html")
-	public String toLogin2() {
-		return "login2";
-	}
 
 }

@@ -66,7 +66,7 @@ if(window!=top){
           <div style="float:right; margin-right: 20px; margin-top:5px;font-size:14px;"><a style="text-decoration:none;" href="${ctx }/repwd1.html">找回密码</a></div>
           </div>
 	</div>
-	<div><a style="text-decoration:none;" href="/chenjx/toLogin2.html">手机登入</a></div>
+	<div><a style="text-decoration:none;" href="/center/toLogin2.html">手机登入</a></div>
 </div>
 </form>
 
