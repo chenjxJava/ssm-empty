@@ -1,4 +1,4 @@
-package com.javen.dao;
+package com.javen.dao.sys;
 
 import org.springframework.stereotype.Repository;
 

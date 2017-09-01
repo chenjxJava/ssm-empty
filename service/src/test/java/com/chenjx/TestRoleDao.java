@@ -8,49 +8,49 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.javen.dao.sys.UserDao;
-import com.javen.model.User;
+import com.javen.dao.sys.RoleDao;
+import com.javen.model.Role;
 
 @RunWith(SpringJUnit4ClassRunner.class)     //表示继承了SpringJUnit4ClassRunner类  
 @ContextConfiguration(locations = {"classpath:spring-mybatis.xml"})
   
-public class TestUserDao {
+public class TestRoleDao {
     @Autowired
-    private UserDao dao;
+    private RoleDao dao;
 
     @Test
     public void testInsert() {
-        User user = new User();
-        user.setUsername("chenjx");
-        user.setPassword("chenjx");
-        user.setSalt("salt");
-        dao.insert(user);
+        Role role = new Role();
+        role.setAvailable("1");
+        role.setDescription("测试");
+        role.setRoleName("系统测试员");
+        dao.insert(role);
     }
 
     @Test
     public void testDelete() {
-        dao.delete("1");
+        dao.delete("2");
     }
 
     @Test
     public void testUpdate() {
-        User user = new User();
-        user.setId(1L);
-        user.setUsername("admin");
-        user.setPassword("admin");
-        user.setSalt("salt");
-        dao.insert(user);
+        Role role = new Role();
+        role.setId(2L);
+        role.setAvailable("1");
+        role.setDescription("aaaa");
+        role.setRoleName("aaaa");
+        dao.update(role);
     }
 
     @Test
     public void testFindById() {
-        User byId = dao.findById("3");
+        Role byId = dao.findById("3");
         System.out.println(byId);
     }
 
     @Test
     public void testFindAllList() {
-        List<User> allList = dao.findAllList();
+        List<Role> allList = dao.findAllList();
         System.out.println(allList);
     }
 

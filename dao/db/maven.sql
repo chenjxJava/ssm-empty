@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50527
 File Encoding         : 65001
 
-Date: 2017-08-24 17:03:22
+Date: 2017-09-01 16:13:02
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -21,15 +21,20 @@ SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `sys_permissions`;
 CREATE TABLE `sys_permissions` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `p_name` varchar(255) DEFAULT NULL,
+  `permission` varchar(255) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL,
   `available` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sys_permissions
 -- ----------------------------
+INSERT INTO `sys_permissions` VALUES ('1', 'play', '111', '1');
+INSERT INTO `sys_permissions` VALUES ('2', 'test', '222', '2');
+INSERT INTO `sys_permissions` VALUES ('3', 'play', '???', '1');
+INSERT INTO `sys_permissions` VALUES ('4', 'play', '中文哦', '1');
+INSERT INTO `sys_permissions` VALUES ('5', 'play', '中文哦', '1');
 
 -- ----------------------------
 -- Table structure for sys_role
@@ -37,15 +42,17 @@ CREATE TABLE `sys_permissions` (
 DROP TABLE IF EXISTS `sys_role`;
 CREATE TABLE `sys_role` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `role` varchar(255) DEFAULT NULL,
+  `role_name` varchar(255) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL,
   `available` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sys_role
 -- ----------------------------
+INSERT INTO `sys_role` VALUES ('1', '系统管理员', '系统管理员', '1');
+INSERT INTO `sys_role` VALUES ('2', '系统测试员', '测试', '1');
 
 -- ----------------------------
 -- Table structure for sys_role_permissions
@@ -71,11 +78,14 @@ CREATE TABLE `sys_users` (
   `password` varchar(255) DEFAULT NULL,
   `salt` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sys_users
 -- ----------------------------
+INSERT INTO `sys_users` VALUES ('1', 'chenjx', 'chenjx', 'salt');
+INSERT INTO `sys_users` VALUES ('2', 'chenjx1', 'chenjx', 'salt');
+INSERT INTO `sys_users` VALUES ('3', 'admin', 'admin', 'salt');
 
 -- ----------------------------
 -- Table structure for sys_user_role
@@ -89,3 +99,21 @@ CREATE TABLE `sys_user_role` (
 -- ----------------------------
 -- Records of sys_user_role
 -- ----------------------------
+
+-- ----------------------------
+-- Table structure for user_t
+-- ----------------------------
+DROP TABLE IF EXISTS `user_t`;
+CREATE TABLE `user_t` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(60) NOT NULL,
+  `password` varchar(60) NOT NULL,
+  `age` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of user_t
+-- ----------------------------
+INSERT INTO `user_t` VALUES ('1', 'admin', 'admin', '18');
+INSERT INTO `user_t` VALUES ('2', 'zhu', '123456', '2');

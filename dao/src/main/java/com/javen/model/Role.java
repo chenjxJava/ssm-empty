@@ -6,7 +6,7 @@ public class Role {
 	private Long id;
 	private String roleName;
 	private String description;
-	private Boolean available;
+	private String available;
 	private List<Permissions> permissionsList;
 
 	public Role() {
@@ -40,11 +40,11 @@ public class Role {
 		this.description = description;
 	}
 
-	public Boolean getAvailable() {
+	public String getAvailable() {
 		return available;
 	}
 
-	public void setAvailable(Boolean available) {
+	public void setAvailable(String available) {
 		this.available = available;
 	}
 
