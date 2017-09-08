@@ -3,15 +3,15 @@ package com.chenjx.common.base;
 import java.util.List;
 
 public interface BaseService<T> {
-	void insert(T entity);
+	Boolean insert(T entity);
 
-	void delete(String id);
+	Boolean delete(String id);
 
 	T findById(String id);
 
-	//List<Permissions> findList(Permissions permissions);
+	List<T> findList(T entity);
 
 	List<T> findAllList();
 
-	void update(T entity);
+	Boolean update(T entity);
 }

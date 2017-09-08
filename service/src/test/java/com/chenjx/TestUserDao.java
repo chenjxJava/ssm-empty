@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.javen.dao.sys.UserDao;
+import com.javen.dao.sys.UserMapper;
 import com.javen.model.User;
 
 @RunWith(SpringJUnit4ClassRunner.class)     //表示继承了SpringJUnit4ClassRunner类  
@@ -16,7 +16,7 @@ import com.javen.model.User;
   
 public class TestUserDao {
     @Autowired
-    private UserDao dao;
+    private UserMapper dao;
 
     @Test
     public void testInsert() {

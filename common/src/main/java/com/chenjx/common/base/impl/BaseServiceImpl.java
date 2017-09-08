@@ -4,8 +4,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.chenjx.common.base.BaseDao;
+import com.chenjx.common.base.BaseMapper;
 import com.chenjx.common.base.BaseService;
+
 
 /**
  * @Author: chenjx
@@ -13,27 +14,32 @@ import com.chenjx.common.base.BaseService;
  * @Date: Created in 13:14 2017-08-25
  * @Modified By:
  */
-public class BaseServiceImpl<T, M extends BaseDao<T>> implements BaseService<T> {
+public class BaseServiceImpl<T, M extends BaseMapper<T>> implements BaseService<T> {
 	@Autowired
-	private M dao;
+	protected M dao;
 
-	public void insert(T entity) {
-		dao.insert(entity);
+	public Boolean insert(T entity) {
+		return dao.insert(entity)>0;
 	}
 
-	public void delete(String id) {
-		dao.delete(id);
+	public Boolean delete(String id) {
+		return dao.delete(id)>0;
 	}
 
 	public T findById(String id) {
 		return dao.findById(id);
 	}
 
+	@Override
+	public List<T> findList(T entity) {
+		return dao.findList(entity);
+	}
+
 	public List<T> findAllList() {
 		return dao.findAllList();
 	}
 
-	public void update(T entity) {
-		update(entity);
+	public Boolean update(T entity) {
+		return dao.update(entity)>0;
 	}
 }

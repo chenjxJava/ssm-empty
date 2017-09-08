@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.javen.dao.sys.PermissionsDao;
+import com.javen.dao.sys.PermissionsMapper;
 import com.javen.model.Permissions;
 
 @RunWith(SpringJUnit4ClassRunner.class)     //表示继承了SpringJUnit4ClassRunner类  
@@ -16,7 +16,7 @@ import com.javen.model.Permissions;
   
 public class TestPermissionDao {
     @Autowired
-    private PermissionsDao dao;
+    private PermissionsMapper dao;
 
     @Test
     public void testInsert() {

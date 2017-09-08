@@ -8,16 +8,16 @@ import java.util.List;
  * @Date: Created in 13:22 2017-08-25
  * @Modified By:
  */
-public interface BaseDao<T> {
-	void insert(T entity);
+public interface BaseMapper<T> {
+	Integer insert(T entity);
 
-	void delete(String id);
+	Integer delete(String id);
 
 	T findById(String id);
 
-	//List<Permissions> findList(Permissions permissions);
+	List<T> findList(T entity);
 
 	List<T> findAllList();
 
-	void update(T entity);
+	Integer update(T entity);
 }

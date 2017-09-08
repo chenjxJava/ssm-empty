@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.javen.dao.sys.RoleDao;
+import com.javen.dao.sys.RoleMapper;
 import com.javen.model.Role;
 
 @RunWith(SpringJUnit4ClassRunner.class)     //表示继承了SpringJUnit4ClassRunner类  
@@ -16,7 +16,7 @@ import com.javen.model.Role;
   
 public class TestRoleDao {
     @Autowired
-    private RoleDao dao;
+    private RoleMapper dao;
 
     @Test
     public void testInsert() {
