@@ -134,13 +134,13 @@ $(document).ready(function() {
 				return;
 			}
 		}
-		var phone = $("#phone").val();
+		var username = $("#username").val();
 		show_pop(888, "修改中");
 		$.ajax({
 			type : 'POST',
-			url : basePath + 'user/registered.do',
+			url : basePath + 'login/registered.do',
 			data : {
-				mobilePhone : phone,
+				username : username,
 				password : hex_md5(password2)
 			},
 			dataType : 'json',

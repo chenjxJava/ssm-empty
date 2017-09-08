@@ -7,14 +7,14 @@ public class User {
 	private String username;
 	private String password;
 	private String salt;
-	private List<Role> roleList;
+	private List<Role> roles;
 
-	public List<Role> getRoleList() {
-		return roleList;
+	public List<Role> getRoles() {
+		return roles;
 	}
 
-	public void setRoleList(List<Role> roleList) {
-		this.roleList = roleList;
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
 	}
 
 	public User() {

@@ -1,8 +1,5 @@
 package com.javen.controller;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -16,19 +13,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/center")
 public class CenterController {
 
+
+
 	/**
 	 * 跳转注册页面
 	 *
-	 * @param request
-	 * @param response
 	 * @return
 	 */
-	@RequestMapping(value = "/registered.html")
-	public String registered(HttpServletRequest request, HttpServletResponse response) {
-		return "registered";
+	@RequestMapping(value = "/toRegister.html")
+	public String toRegister2() {
+		return "toRegister";
 	}
 
 	/**
+	 * 跳转到用户名密码登入
 	 *
 	 * @return
 	 */
@@ -38,6 +36,7 @@ public class CenterController {
 	}
 
 	/**
+	 * 跳转到手机登入页面
 	 *
 	 * @return
 	 */

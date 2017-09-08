@@ -62,7 +62,7 @@ if(window!=top){
             <input class="land_inp1" id="password" name="userPwd" type="hidden"/>
             <div class="land_inp2" id ="ts">${errMsg}</div>
             <button class="land_btn"  type="submit" id="submit_btn1">&nbsp;登&nbsp;录&nbsp </button>
-             <div style="float:left; margin-left: 20px; margin-top:5px;font-size:14px;"><a style="text-decoration:none;" href="${ctx }/center/registered.html">立即注册</a></div>
+             <div style="float:left; margin-left: 20px; margin-top:5px;font-size:14px;"><a style="text-decoration:none;" href="${ctx }/center/toRegister.html">立即注册</a></div>
           <div style="float:right; margin-right: 20px; margin-top:5px;font-size:14px;"><a style="text-decoration:none;" href="${ctx }/center/repwd1.html">找回密码</a></div>
           </div>
 	</div>

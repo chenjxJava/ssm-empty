@@ -7,7 +7,7 @@ public class Role {
 	private String roleName;
 	private String description;
 	private String available;
-	private List<Permissions> permissionsList;
+	private List<Permissions> permissions;
 
 	public Role() {
 	}
@@ -48,12 +48,12 @@ public class Role {
 		this.available = available;
 	}
 
-	public List<Permissions> getPermissionsList() {
-		return permissionsList;
+	public List<Permissions> getPermissions() {
+		return permissions;
 	}
 
-	public void setPermissionsList(List<Permissions> permissionsList) {
-		this.permissionsList = permissionsList;
+	public void setPermissions(List<Permissions> permissions) {
+		this.permissions = permissions;
 	}
 
 	@Override
@@ -63,7 +63,7 @@ public class Role {
 			", roleName='" + roleName + '\'' +
 			", description='" + description + '\'' +
 			", available=" + available +
-			", permissionsList=" + permissionsList +
+			", permissionsList=" + permissions +
 			'}';
 	}
 }
