@@ -35,6 +35,7 @@
         <property name="unauthorizedUrl" value="/index2.jsp" /> <!-- 没有授权返回地址 -->
         <property name="filterChainDefinitions">
             <value>            <!-- **代表任意子目录 -->
+                /demo/** = anon
                 /index.jsp = anon
                 /resource/** = anon
                 /chenjx/** = anon

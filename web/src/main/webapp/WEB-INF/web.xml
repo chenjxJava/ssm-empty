@@ -39,8 +39,8 @@
     <!-- 防止Spring内存溢出监听器 -->  
     <listener>  
         <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>  
-    </listener>  
-  
+    </listener>
+
     <!-- Spring MVC servlet -->  
     <servlet>  
         <servlet-name>SpringMVC</servlet-name>  

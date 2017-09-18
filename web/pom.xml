@@ -4,8 +4,8 @@
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<artifactId>maven02</artifactId>
 		<groupId>com.javen.maven02</groupId>
+		<artifactId>ssm-empty</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>web</artifactId>
@@ -20,12 +20,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.javen.maven02</groupId>
-			<artifactId>dao</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>com.javen.maven02</groupId>
-			<artifactId>service</artifactId>
+			<artifactId>bussiness</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>

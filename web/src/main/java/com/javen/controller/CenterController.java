@@ -2,6 +2,7 @@ package com.javen.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * @Author: chenjx
@@ -20,7 +21,7 @@ public class CenterController {
 	 *
 	 * @return
 	 */
-	@RequestMapping(value = "/toRegister.html")
+	@RequestMapping(value = "/toRegister.html", method = {RequestMethod.GET})
 	public String toRegister2() {
 		return "toRegister";
 	}
@@ -30,7 +31,7 @@ public class CenterController {
 	 *
 	 * @return
 	 */
-	@RequestMapping("/toLogin.html")
+	@RequestMapping(value = "/toLogin.html", method = {RequestMethod.GET})
 	public String toLogin() {
 		return "login";
 	}
@@ -40,7 +41,7 @@ public class CenterController {
 	 *
 	 * @return
 	 */
-	@RequestMapping("/toLogin2.html")
+	@RequestMapping(value = "/toLogin2.html", method = {RequestMethod.GET})
 	public String toLogin2() {
 		return "login2";
 	}

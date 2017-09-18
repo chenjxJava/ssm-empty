@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.javen.model.Response;
-import com.javen.model.User;
+import com.javen.sys.model.Response;
+import com.javen.sys.model.User;
 
 @Controller
 @RequestMapping("/chenjx")

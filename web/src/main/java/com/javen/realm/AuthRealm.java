@@ -11,7 +11,7 @@ import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
 
-import com.javen.model.User;
+import com.javen.sys.model.User;
 
 public class AuthRealm extends AuthorizingRealm {
 

@@ -14,12 +14,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.chenjx.common.utils.PasswordHelper;
-import com.javen.model.Permissions;
-import com.javen.model.Role;
-import com.javen.model.User;
-import com.javen.service.UserService;
+import com.javen.sys.model.Permissions;
+import com.javen.sys.model.Role;
+import com.javen.sys.model.User;
+import com.javen.sys.service.UserService;
 
 @Controller  
 @RequestMapping("/login")
@@ -31,7 +32,7 @@ public class LoginController {
 
 	 private String CURRENT_USER_INFO = "current_user_info";
 
-	 @RequestMapping("/register.html")
+	 @RequestMapping(value = "/register.html", method = {RequestMethod.POST})
 	 public String register(HttpServletRequest request, User user) {
 
 		 String username = request.getParameter("username");
@@ -44,7 +45,7 @@ public class LoginController {
 		 return "index";
 	 }
 
-    @RequestMapping("/login.html")
+    @RequestMapping(value = "/login.html", method = {RequestMethod.POST})
     public String login(HttpServletRequest request, User user) throws Exception {
          /** shiro登录方式：根据用户名获取密码，密码为null非法用户；有密码检查是否用户填写的密码
          * 登录成功后无需往httpsession中存放当前用户，这样就跟web容器绑定，关联太紧密；它自己创建
@@ -81,7 +82,7 @@ public class LoginController {
         return "success";
     }
 
-    @RequestMapping("/logout.html")
+    @RequestMapping(value = "/logout.html", method = {RequestMethod.GET})
     public String logout(HttpServletRequest request){
         HttpSession session = request.getSession();
         session.removeAttribute(CURRENT_USER_INFO);      //删除session

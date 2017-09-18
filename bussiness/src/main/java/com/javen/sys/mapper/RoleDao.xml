@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.javen.sys.dao.RoleMapper">
+	<resultMap id="permissionsMap" type="com.javen.sys.model.Role">
+		<id column="id" property="id" />
+		<result column="role_name" property="roleName" jdbcType="VARCHAR" />
+		<result column="description" property="description" jdbcType="VARCHAR" />
+		<result column="available" property="available" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<sql id="Base_Select_SQL">
+		id,role_name,description,available
+	</sql>
+
+	<insert id="insert" parameterType="com.javen.sys.model.Role">
+		insert into sys_role(
+		<trim suffixOverrides=",">
+			<if test="roleName!=null and roleName!=''">
+				role_name,
+			</if>
+			<if test="description!=null and description!=''">
+				description,
+			</if>
+			<if test="available!=null and available!=''">
+				available,
+			</if>
+		</trim>
+		) values (
+		<trim suffixOverrides=",">
+			<if test="roleName!=null and roleName!=''">
+				#{roleName},
+			</if>
+			<if test="description!=null and description!=''">
+				#{description},
+			</if>
+			<if test="available!=null and available!=''">
+				#{available},
+			</if>
+		</trim>
+		)
+	</insert>
+
+	<delete id="delete" parameterType="java.lang.String">
+		DELETE FROM sys_role
+		WHERE id = #{id}
+	</delete>
+
+	<update id="update" parameterType="com.javen.sys.model.Role">
+		update sys_role
+		<set>
+			<if test="roleName!=null and roleName!=''">
+				role_name=#{roleName},
+			</if>
+			<if test="description!=null and description!=''">
+				description=#{description},
+			</if>
+			<if test="available!=null and available!=''">
+				available=#{available},
+			</if>
+		</set>
+		where id=#{id}
+	</update>
+
+	<select id="findById" parameterType="java.lang.String" resultType="com.javen.sys.model.Role">
+		SELECT <include refid="Base_Select_SQL" />
+		FROM sys_role
+		WHERE id = #{id};
+	</select>
+
+	<select id="findAllList"  resultType="com.javen.sys.model.Role">
+		SELECT <include refid="Base_Select_SQL" />
+		FROM sys_role
+	</select>
+</mapper>

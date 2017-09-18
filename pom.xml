@@ -2,12 +2,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.javen.maven02</groupId>
-	<artifactId>maven02</artifactId>
+	<artifactId>ssm-empty</artifactId>
 	<packaging>pom</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<modules>
-		<module>dao</module>
-		<module>service</module>
+		<module>bussiness</module>
 		<module>common</module>
 		<module>web</module>
 	</modules>
@@ -26,9 +25,37 @@
         <log4j.version>1.2.17</log4j.version>
 		<junit.version>4.12</junit.version>
     </properties> 
-	
 	<dependencies>
-        <!--shiro-->
+		<!-- swagger-mvc -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.4.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.4.0</version>
+		</dependency>
+		<!-- swagger-mvc -->
+		<!-- json -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.6.5</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.6.5</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>2.6.5</version>
+		</dependency>
+
+		<!--shiro-->
         <dependency>
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-all</artifactId>
@@ -198,7 +225,6 @@
 			<version>${junit.version}</version>
 		</dependency>
 	</dependencies>
-	
 	<build>
 		<plugins>
 			<plugin>
@@ -226,5 +252,4 @@
 			</resource>
 		</resources>
 		</build>
-
 </project>

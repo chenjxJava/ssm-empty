@@ -1,7 +1,6 @@
 ##【工程结构】
 	ssm
  		|___common
- 		|___dao
  		|___service
  		|___web
  		
@@ -9,3 +8,9 @@
 		|user
 		|role
 		|permission
+		
+##【url】
+		1.首页
+		localhost:8080/
+		2.swagger页面
+		localhost:8080/swagger-ui.html
