@@ -1,4 +1,4 @@
-package com.chenjx.common.utils;
+package com.chenjx.common.utils.password;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -8,9 +8,6 @@ import org.apache.shiro.crypto.SecureRandomNumberGenerator;
 import org.apache.shiro.crypto.hash.SimpleHash;
 import org.apache.shiro.util.ByteSource;
 
-/**
- * 前台密码，进行md5加密，传输到后台
- */
 public class PasswordHelper {
 
 	private RandomNumberGenerator randomNumberGenerator = new SecureRandomNumberGenerator();
@@ -62,14 +59,5 @@ public class PasswordHelper {
 			return true;
 		}
 		return false;
-	}
-
-	public static void main(String[] args) {
-		//Map<String, Object> admin = new PasswordHelper().generatePassword("admin");//{password=9f8472a3ee04d0395ab4016aa4cbdb43, salt=77b5a93df42ce5e41c7d043f28dc9f6d}
-		//System.out.println(admin);
-
-		boolean admin = new PasswordHelper().checkPassword("admin",
-			"9f8472a3ee04d0395ab4016aa4cbdb43", "77b5a93df42ce5e41c7d043f28dc9f6d");
-		System.out.println(admin);
 	}
 }

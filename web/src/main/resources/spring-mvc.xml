@@ -16,9 +16,10 @@
     <mvc:annotation-driven/>
     <!-- 静态资源处理  css js imgs -->
     <mvc:resources location="/resource/" mapping="/resource/**"/>
+    <!--swagger配置-->
     <mvc:resources location="classpath:/META-INF/resources/" mapping="swagger-ui.html"/>
     <mvc:resources location="classpath:/META-INF/resources/webjars/" mapping="/webjars/**"/>
-
+    <!--swagger-->
     <bean class="springfox.documentation.swagger2.configuration.Swagger2DocumentationConfiguration" id="swagger2Config"/>
 
     <!--避免IE执行AJAX时，返回JSON出现下载文件 -->  

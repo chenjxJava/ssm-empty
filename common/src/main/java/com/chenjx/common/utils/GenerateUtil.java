@@ -27,4 +27,15 @@ public class GenerateUtil {
 		return thirdLogNo;
 	}
 
+	public static String getCodeForMember() {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
+		StringBuffer sb = new StringBuffer();
+		return sb.append(sdf.format(new Date())).append(new Random().nextInt(999)).toString();
+	}
+
+	public static void main(String[] args) {
+		String codeForMember = getCodeForMember();
+		System.out.println(codeForMember);
+	}
+
 }
