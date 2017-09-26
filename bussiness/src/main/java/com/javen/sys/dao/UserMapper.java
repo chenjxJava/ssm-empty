@@ -8,4 +8,5 @@ import com.javen.sys.model.User;
 @Repository
 public interface UserMapper extends BaseMapper<User> {
 
+	User findByUsername(String username);
 }

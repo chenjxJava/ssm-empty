@@ -10,4 +10,7 @@ import com.javen.sys.model.User;
  * @Modified By:
  */
 public interface UserService extends BaseService<User> {
+
+
+	User findByUsername(String username);
 }

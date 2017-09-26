@@ -1,5 +1,6 @@
 package com.javen.realm;
 
+
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -13,7 +14,7 @@ import org.apache.shiro.util.ByteSource;
 
 import com.javen.sys.model.User;
 
-public class AuthRealm extends AuthorizingRealm {
+public class AuthRealm extends AuthorizingRealm  {
 
 
 
@@ -22,6 +23,11 @@ public class AuthRealm extends AuthorizingRealm {
         String username = (String)principals.getPrimaryPrincipal();
 
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
+        authorizationInfo.addRole("admin");
+        authorizationInfo.addStringPermission("user:view");
+        authorizationInfo.addStringPermission("user:edit");
+        authorizationInfo.addStringPermission("user:update");
+        authorizationInfo.addStringPermission("user:delete");
 
         return authorizationInfo;
     }
@@ -30,8 +36,7 @@ public class AuthRealm extends AuthorizingRealm {
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
 
         String username = (String)token.getPrincipal();
-
-        //User user = userService.findByUsername(username);
+       // User user = userService.findByUsername(username);
 			User user = new User();
 
 			if(user == null) {

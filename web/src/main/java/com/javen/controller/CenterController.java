@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class CenterController {
 
 
-
 	/**
 	 * 跳转注册页面
 	 *

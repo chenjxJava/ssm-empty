@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.javen.sys.dao.UserMapper">
-	<resultMap id="permissionsMap" type="com.javen.sys.model.User">
+	<resultMap id="User_ResultMap" type="com.javen.sys.model.User">
 		<id column="id" property="id" />
 		<result column="username" property="username" jdbcType="VARCHAR" />
 		<result column="password" property="password" jdbcType="VARCHAR" />
@@ -69,5 +69,27 @@
 	<select id="findAllList"  resultType="com.javen.sys.model.User">
 		SELECT <include refid="Base_Select_SQL" />
 		FROM sys_users
+	</select>
+
+	<select id="findByUsername" parameterType="java.lang.String" resultType="com.javen.sys.model.User" >
+		SELECT <include refid="Base_Select_SQL" />
+		FROM sys_users
+		WHERE username = #{username}
+	</select>
+
+	<select id="findList" parameterType="com.javen.sys.model.User"  resultMap="User_ResultMap">
+		SELECT <include refid="Base_Select_SQL" />
+		FROM sys_users
+		<where>
+			<if test="username!=null and username!=''">
+				AND username=#{username}
+			</if>
+			<if test="password!=null and password!=''">
+				AND password LIKE #{password}
+			</if>
+			<if test="salt!=null and salt!=''">
+				AND salt=#{salt}
+			</if>
+		</where>
 	</select>
 </mapper>

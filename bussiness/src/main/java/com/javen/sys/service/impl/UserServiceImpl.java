@@ -13,8 +13,11 @@ import com.javen.sys.service.UserService;
  * @Date: Created in 17:22 2017-09-04
  * @Modified By:
  */
-@Service
+@Service("userService")
 public class UserServiceImpl extends BaseServiceImpl<User, UserMapper> implements UserService {
 
-
+	@Override
+	public User findByUsername(String username) {
+		return dao.findByUsername(username);
+	}
 }
