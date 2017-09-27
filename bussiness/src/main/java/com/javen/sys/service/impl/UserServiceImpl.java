@@ -17,7 +17,7 @@ import com.javen.sys.service.UserService;
 public class UserServiceImpl extends BaseServiceImpl<User, UserMapper> implements UserService {
 
 	@Override
-	public User findByUsername(String username) {
-		return dao.findByUsername(username);
+	public User findUserByUsername(String username) {
+		return dao.findUserByUsername(username);
 	}
 }

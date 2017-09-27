@@ -50,7 +50,7 @@ public class Permissions {
 		new Role();
 		return "Permissions{" +
 			"id=" + id +
-			", pName='" + permission + '\'' +
+			", permission='" + permission + '\'' +
 			", description='" + description + '\'' +
 			", available=" + available +
 			'}';

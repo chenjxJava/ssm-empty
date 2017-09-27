@@ -2,23 +2,17 @@ package com.javen.match;
 
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
-import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 
 /**
  * Created by Jcobo on 2017/8/21.
  */
 public class CustomCredentialsMatcher extends HashedCredentialsMatcher {
-    public boolean doCredentialsMatch(AuthenticationToken token,
-                                      AuthenticationInfo info) {
-        UsernamePasswordToken usertoken = (UsernamePasswordToken) token;
+    // 声明一个缓存接口，这个接口是Shiro缓存管理的一部分，它的具体实现可以通过外部容器注入
 
-        //注意token.getPassword()拿到的是一个char[]，不能直接用toString()，它底层实现不是我们想的直接字符串，只能强转
-        /*Object tokenCredentials = Encrypt.md5(String.valueOf(usertoken.getPassword()),usertoken.getUsername());
-        Object accountCredentials = getCredentials(info);*/
+    @Override
+    public boolean doCredentialsMatch(AuthenticationToken token, AuthenticationInfo info) {
 
-
-        //将密码加密与系统加密后的密码校验，内容一致就返回true,不一致就返回false
-        return super.doCredentialsMatch(token, info);
+        return super.doCredentialsMatch(token,info);
     }
 }

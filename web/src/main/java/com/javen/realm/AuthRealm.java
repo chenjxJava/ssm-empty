@@ -39,7 +39,7 @@ public class AuthRealm extends AuthorizingRealm  {
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
 
         String username = (String)token.getPrincipal();
-        User user = userService.findByUsername(username);
+        User user = userService.findUserByUsername(username);
 //			User user = new User();
 
 			if(user == null) {

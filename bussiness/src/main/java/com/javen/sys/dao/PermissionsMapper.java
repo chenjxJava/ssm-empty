@@ -1,6 +1,6 @@
 package com.javen.sys.dao;
 
-import java.util.List;
+import java.util.Set;
 
 import org.springframework.stereotype.Repository;
 
@@ -10,5 +10,5 @@ import com.javen.sys.model.Permissions;
 @Repository
 public interface PermissionsMapper extends BaseMapper<Permissions> {
 
-	List<Permissions> findList(String description);
+
 }

@@ -46,10 +46,8 @@ public class UserMapperTest {
 
 	@Test
 	public void testLogin() {
-		User cs001 = userMapper.findByUsername("cs001");
-		String password = MD5.md5("chenjx");
-		boolean b = new PasswordHelper().checkPassword(password, cs001.getPassword(), cs001.getSalt());
-		System.out.println(b);
+		User cs001 = userMapper.findUserByUsername("cs001");
+		System.out.println(cs001);
 	}
 
 	@Test
