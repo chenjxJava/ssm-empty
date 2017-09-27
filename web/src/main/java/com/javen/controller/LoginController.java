@@ -1,6 +1,5 @@
 package com.javen.controller;
 
-import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -23,8 +22,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.chenjx.common.entity.WebResultEntity;
 import com.chenjx.common.utils.PasswordHelper;
-import com.javen.sys.model.Permissions;
-import com.javen.sys.model.Role;
 import com.javen.sys.model.User;
 import com.javen.sys.service.UserService;
 
@@ -63,20 +60,20 @@ public class LoginController {
         //shiro是将用户录入的登录名和密码（未加密）封装到token对象中
         String userName = user.getUsername();
         String password = user.getPassword();
-        UsernamePasswordToken token = new UsernamePasswordToken(userName,password);
+        UsernamePasswordToken token = new UsernamePasswordToken(userName,password.toCharArray());
 
         try{
             subject.login(token);   //自动调用AuthRealm.doGetAuthenticationInfo
 
    					//写seesion，保存当前user对象
             User curUser = (User)subject.getPrincipal();            //从shiro中获取当前用户
-            List<Role> roles = curUser.getRoles();
+           /* List<Role> roles = curUser.getRoles();
             for(Role role :roles){
                 List<Permissions> permissions =  role.getPermissions();
                 for (Permissions permission : permissions) {
                     System.out.println(permission.getDescription());
                 }
-            }
+            }*/
             HttpSession session = request.getSession();
             session.setAttribute(CURRENT_USER_INFO, curUser);
 					//Principal 当前用户对象

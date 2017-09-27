@@ -26,7 +26,11 @@
     </bean>
 
     <!-- 设置密码加密策略 md5hash -->
-    <bean id="passwordMatcher" class="com.javen.match.CustomCredentialsMatcher"/>
+    <bean id="passwordMatcher" class="com.javen.match.CustomCredentialsMatcher">
+        <property name="hashAlgorithmName" value="md5" />
+        <property name="hashIterations" value="2" />
+        <property name="storedCredentialsHexEncoded" value="true" />
+    </bean>
 
     <!-- 此bean要被web.xml引用,和web.xml中的filtername同名 -->
     <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">

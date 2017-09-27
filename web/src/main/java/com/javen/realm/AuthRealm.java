@@ -11,12 +11,15 @@ import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.javen.sys.model.User;
+import com.javen.sys.service.UserService;
 
 public class AuthRealm extends AuthorizingRealm  {
 
-
+    @Autowired
+    private UserService userService;
 
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
@@ -36,8 +39,8 @@ public class AuthRealm extends AuthorizingRealm  {
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
 
         String username = (String)token.getPrincipal();
-       // User user = userService.findByUsername(username);
-			User user = new User();
+        User user = userService.findByUsername(username);
+//			User user = new User();
 
 			if(user == null) {
             throw new UnknownAccountException();//没找到帐号
@@ -49,7 +52,7 @@ public class AuthRealm extends AuthorizingRealm  {
 */
         //交给AuthenticatingRealm使用CredentialsMatcher进行密码匹配，如果觉得人家的不好可以自定义实现
         SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(
-                user.getUsername(), //用户名
+                user, //用户名
                 user.getPassword(), //密码
                 ByteSource.Util.bytes(user.getSalt()),//salt=username+salt
                 getName()  //realm name
