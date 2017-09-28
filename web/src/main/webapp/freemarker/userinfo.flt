@@ -5,3 +5,4 @@
 <#list role.permissions as permission>
 	${permission.permission},${permission.description}
 </#list>
+</#list>

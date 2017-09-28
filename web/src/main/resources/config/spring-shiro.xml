@@ -35,17 +35,18 @@
     <!-- 此bean要被web.xml引用,和web.xml中的filtername同名 -->
     <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
         <property name="securityManager" ref="securityManager"/>
-        <property name="loginUrl" value="/index.jsp" /> <!-- 没有认证返回地址 -->
-        <property name="unauthorizedUrl" value="/index2.jsp" /> <!-- 没有授权返回地址 -->
+        <property name="loginUrl" value="/index.html" /> <!-- 没有认证返回地址 -->
+        <property name="unauthorizedUrl" value="/unauthorized.html" /> <!-- 没有授权返回地址 -->
         <property name="filterChainDefinitions">
             <value>            <!-- **代表任意子目录 -->
-                /demo/** = anon
-                /index.jsp = anon
+                /index.html = anon
                 /resource/** = anon
-                /chenjx/** = authc
                 /login/** = anon
+                /center/** = anon
+                /chenjx/** = authc
                 /user/** = authc,roles[admin]
                 /test/** = authc,perms[测试用的lkkk]
+                /** = authc
             </value>
         </property>
     </bean>

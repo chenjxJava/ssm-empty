@@ -35,9 +35,8 @@ public class LoginController {
 
 	 private String CURRENT_USER_INFO = "current_user_info";
 
-	 @RequestMapping(value = "/register.html", method = {RequestMethod.POST})
-	 public String register(HttpServletRequest request, User user) {
-
+	 @RequestMapping(value = "/register.html"/*, method = {RequestMethod.POST}*/)
+	 public void register(HttpServletRequest request, HttpServletResponse response, User user) { WebResultEntity result = new WebResultEntity();
 		 String username = request.getParameter("username");
 		 String password = request.getParameter("password");
 		 PasswordHelper passwordHelper = new PasswordHelper();
@@ -45,7 +44,8 @@ public class LoginController {
 		 user.setPassword(generatePassword.get("password").toString());
 		 user.setSalt(generatePassword.get("salt").toString());
 		 userService.insert(user);
-		 return "index";
+		 result.setDataSucMessage("1","注册成功");
+		 result.printJson(result, response);
 	 }
 
     @RequestMapping(value = "/login.html"/*, method = {RequestMethod.POST}*/)
@@ -53,7 +53,6 @@ public class LoginController {
          /** shiro登录方式：根据用户名获取密码，密码为null非法用户；有密码检查是否用户填写的密码
          * 登录成功后无需往httpsession中存放当前用户，这样就跟web容器绑定，关联太紧密；它自己创建
          * subject对象，实现自己的session。这个跟web容器脱离，实现松耦合。*/
-
         WebResultEntity result = new WebResultEntity();
         //调用shiro判断当前用户是否是系统用户
         Subject subject = SecurityUtils.getSubject();   //得到当前用户
@@ -73,28 +72,41 @@ public class LoginController {
         } catch (UnknownAccountException e) {
             e.printStackTrace();
             result.setErrorMessageAndData("用户名或者密码错误！", user.getUsername());
+            result.printJson(result, response);
+            return;
         } catch (LockedAccountException e) {
             e.printStackTrace();
             result.setErrorMessageAndData("该账号已被锁定，请稍后在试!", user.getUsername());
+            result.printJson(result, response);
+            return;
         } catch (IncorrectCredentialsException e) {
             e.printStackTrace();
             result.setErrorMessageAndData("用户名或者密码错误!", user.getUsername());
+            result.printJson(result, response);
+            return;
         } catch (ExcessiveAttemptsException e) {
             e.printStackTrace();
             result.setErrorMessageAndData("登录次数过多，请稍后在试！", user.getUsername());
+            result.printJson(result, response);
+            return;
         } catch (Exception e) {
             e.printStackTrace();
             result.setErrorMessageAndData("系统异常！", user.getUsername());
+            result.printJson(result, response);
+            return;
         }
         result.setDataSucMessage("1","登入成功");
         result.printJson(result, response);
     }
 
     @RequestMapping(value = "/logout.html", method = {RequestMethod.GET})
-    public String logout(HttpServletRequest request){
+    public void logout(HttpServletRequest request, HttpServletResponse response){
+        WebResultEntity result = new WebResultEntity();
         HttpSession session = request.getSession();
         session.removeAttribute(CURRENT_USER_INFO);      //删除session
-        return "logout";
+        SecurityUtils.getSubject().logout();
+        result.setDataSucMessage("1","登出成功");
+        result.printJson(result, response);
     }
 
 
