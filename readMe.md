@@ -11,9 +11,11 @@
 		
 ##【url】
 		1.首页
-		localhost:8080/
+			localhost:8080/login/login.html?username=cs001&password=FDE11C5E23A882CC79B2C206EB2D19AE
 		2.swagger页面
-		localhost:8080/swagger-ui.html
+			localhost:8080/swagger-ui.html
+		3.freemarker
+			localhost:8080/user/info.html
 
 #common包中添加jedis
 1.添加maven依赖

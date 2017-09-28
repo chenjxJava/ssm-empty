@@ -1,0 +1,7 @@
+欢迎${root.username}，登入本网站
+您的角色为：<#list root.roles as role>
+	${role.roleName},${role.description}
+您的权限为：
+<#list role.permissions as permission>
+	${permission.permission},${permission.description}
+</#list>

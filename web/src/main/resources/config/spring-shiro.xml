@@ -42,7 +42,7 @@
                 /demo/** = anon
                 /index.jsp = anon
                 /resource/** = anon
-                /chenjx/** = anon
+                /chenjx/** = authc
                 /login/** = anon
                 /user/** = authc,roles[admin]
                 /test/** = authc,perms[测试用的lkkk]

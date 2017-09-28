@@ -1,6 +1,5 @@
 package com.javen.controller;
 
-import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -23,8 +22,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.chenjx.common.entity.WebResultEntity;
 import com.chenjx.common.utils.PasswordHelper;
-import com.javen.sys.model.Permissions;
-import com.javen.sys.model.Role;
 import com.javen.sys.model.User;
 import com.javen.sys.service.UserService;
 
@@ -51,7 +48,7 @@ public class LoginController {
 		 return "index";
 	 }
 
-    @RequestMapping(value = "/login.html", method = {RequestMethod.POST})
+    @RequestMapping(value = "/login.html"/*, method = {RequestMethod.POST}*/)
     public void login(HttpServletRequest request, HttpServletResponse response, User user) throws Exception {
          /** shiro登录方式：根据用户名获取密码，密码为null非法用户；有密码检查是否用户填写的密码
          * 登录成功后无需往httpsession中存放当前用户，这样就跟web容器绑定，关联太紧密；它自己创建
@@ -70,13 +67,6 @@ public class LoginController {
 
    					//写seesion，保存当前user对象
             User curUser = (User)subject.getPrincipal();            //从shiro中获取当前用户
-            List<Role> roles = curUser.getRoles();
-            for(Role role :roles){
-                List<Permissions> permissions =  role.getPermissions();
-                for (Permissions permission : permissions) {
-                    System.out.println(permission.getDescription());
-                }
-            }
             HttpSession session = request.getSession();
             session.setAttribute(CURRENT_USER_INFO, curUser);
 					//Principal 当前用户对象

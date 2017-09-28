@@ -13,6 +13,8 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.javen.sys.model.Permissions;
+import com.javen.sys.model.Role;
 import com.javen.sys.model.User;
 import com.javen.sys.service.UserService;
 
@@ -23,15 +25,14 @@ public class AuthRealm extends AuthorizingRealm  {
 
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
-        String username = (String)principals.getPrimaryPrincipal();
-
+        User user = (User)principals.getPrimaryPrincipal();
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
-        authorizationInfo.addRole("admin");
-        authorizationInfo.addStringPermission("user:view");
-        authorizationInfo.addStringPermission("user:edit");
-        authorizationInfo.addStringPermission("user:update");
-        authorizationInfo.addStringPermission("user:delete");
-
+        for (Role role : user.getRoles()) {
+            authorizationInfo.addRole(role.getRoleName());
+            for (Permissions permissions : role.getPermissions()) {
+                authorizationInfo.addStringPermission(permissions.getPermission());
+            }
+        }
         return authorizationInfo;
     }
 
