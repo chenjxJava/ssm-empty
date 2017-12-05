@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : myDB
+Source Server         : localhost
 Source Server Version : 50527
 Source Host           : localhost:3306
 Source Database       : maven
@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50527
 File Encoding         : 65001
 
-Date: 2017-09-27 16:56:39
+Date: 2017-12-05 23:08:36
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -47,7 +47,7 @@ CREATE TABLE `sys_role` (
   `description` varchar(255) DEFAULT NULL,
   `available` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sys_role
@@ -55,6 +55,7 @@ CREATE TABLE `sys_role` (
 INSERT INTO `sys_role` VALUES ('1', '系统管理员', '系统管理员', '1');
 INSERT INTO `sys_role` VALUES ('2', '系统测试员', '测试', '1');
 INSERT INTO `sys_role` VALUES ('3', '测试角色1', '测试角色', '1');
+INSERT INTO `sys_role` VALUES ('4', 'xxx', 'xxxx', '1');
 
 -- ----------------------------
 -- Table structure for sys_role_permissions
@@ -70,8 +71,11 @@ CREATE TABLE `sys_role_permissions` (
 -- Records of sys_role_permissions
 -- ----------------------------
 INSERT INTO `sys_role_permissions` VALUES ('1', '1');
+INSERT INTO `sys_role_permissions` VALUES ('1', '2');
 INSERT INTO `sys_role_permissions` VALUES ('2', '1');
+INSERT INTO `sys_role_permissions` VALUES ('2', '3');
 INSERT INTO `sys_role_permissions` VALUES ('3', '1');
+INSERT INTO `sys_role_permissions` VALUES ('3', '4');
 INSERT INTO `sys_role_permissions` VALUES ('4', '1');
 
 -- ----------------------------
@@ -84,13 +88,14 @@ CREATE TABLE `sys_users` (
   `password` varchar(255) DEFAULT NULL,
   `salt` varchar(255) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sys_users
 -- ----------------------------
 INSERT INTO `sys_users` VALUES ('1', 'chenjx', 'ed1083dc86ce013a774de81574e036a2', '4f0810debf9fb93f304410f921447222');
 INSERT INTO `sys_users` VALUES ('2', 'cs001', '9a25dfa08d939d0511e2146385306a53', '6ee7be32da00d252c40de98383578a39');
+INSERT INTO `sys_users` VALUES ('3', 'cs002', 'f1768b3f0c8e08a2f185effcf058927c', 'e858b90bc32063c2c09de6ee950650b8');
 
 -- ----------------------------
 -- Table structure for sys_user_role
@@ -105,6 +110,9 @@ CREATE TABLE `sys_user_role` (
 -- Records of sys_user_role
 -- ----------------------------
 INSERT INTO `sys_user_role` VALUES ('2', '1');
+INSERT INTO `sys_user_role` VALUES ('3', '1');
+INSERT INTO `sys_user_role` VALUES ('3', '2');
+INSERT INTO `sys_user_role` VALUES ('3', '3');
 
 -- ----------------------------
 -- Table structure for user_t

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.chenjx.sys.dao.UserMapper">
+	<resultMap id="User_ResultMap" type="com.chenjx.sys.model.User">
+		<id column="id" property="id" />
+		<result column="username" property="username" jdbcType="VARCHAR" />
+		<result column="password" property="password" jdbcType="VARCHAR" />
+		<result column="salt" property="salt" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<resultMap id="USER_ALL_MAP" type="com.chenjx.sys.model.User" extends="User_ResultMap">
+		<collection property="roles" ofType="com.chenjx.sys.model.Role">
+			<id column="id" property="id" />
+			<result column="role_name" property="roleName" jdbcType="VARCHAR" />
+			<result column="description" property="description" jdbcType="VARCHAR" />
+			<result column="available" property="available" jdbcType="VARCHAR" />
+			<collection property="permissions" ofType="com.chenjx.sys.model.Permissions">
+				<!-- id：订单明细的唯一标识 列 -->
+				<id property="id" column="pid"/>
+				<result property="permission" column="permission"/>
+				<result property="description" column="pdescription"/>
+				<result property="available" column="pavailable"/>
+			</collection>
+		</collection>
+	</resultMap>
+	<sql id="Base_Select_SQL">
+		u.id,u.username,u.password,u.salt
+	</sql>
+
+	<insert id="insert" parameterType="com.chenjx.sys.model.User">
+		insert into sys_users(
+		<trim suffixOverrides=",">
+			<if test="username!=null and username!=''">
+				username,
+			</if>
+			<if test="password!=null and password!=''">
+				password,
+			</if>
+			<if test="salt!=null and salt!=''">
+				salt,
+			</if>
+		</trim>
+		) values (
+		<trim suffixOverrides=",">
+			<if test="username!=null and username!=''">
+				#{username},
+			</if>
+			<if test="password!=null and password!=''">
+				#{password},
+			</if>
+			<if test="salt!=null and salt!=''">
+				#{salt},
+			</if>
+		</trim>
+		)
+	</insert>
+
+	<delete id="delete" parameterType="java.lang.String">
+		DELETE FROM sys_users
+		WHERE id = #{id}
+	</delete>
+
+	<update id="update" parameterType="com.chenjx.sys.model.User">
+		update sys_users
+		<set>
+			<if test="username!=null and username!=''">
+				username=#{username},
+			</if>
+			<if test="password!=null and password!=''">
+				password=#{password},
+			</if>
+			<if test="salt!=null and salt!=''">
+				salt=#{salt},
+			</if>
+		</set>
+		where id=#{id}
+	</update>
+
+	<select id="findById" parameterType="java.lang.String" resultType="com.chenjx.sys.model.User">
+		SELECT <include refid="Base_Select_SQL" />
+		FROM sys_users u
+		WHERE id = #{id};
+	</select>
+
+	<select id="findAllList"  resultType="com.chenjx.sys.model.User">
+		SELECT <include refid="Base_Select_SQL" />
+		FROM sys_users u
+	</select>
+
+	<select id="findUserByUsername" parameterType="string" resultMap="USER_ALL_MAP">
+		SELECT <include refid="Base_Select_SQL" />,
+		r.id,
+		r.role_name,
+		r.description,
+		r.available,
+		p.permission,
+		p.id AS pid,
+		p.description AS pdescription,
+		p.available AS pavailable
+		FROM sys_users u
+		LEFT JOIN sys_user_role ur on u.id = ur.userId
+		LEFT JOIN sys_role r on ur.roleId = r.id
+		LEFT JOIN sys_role_permissions rp on r.id = rp.role_id
+		LEFT JOIN sys_permissions p on rp.permissions_id = p.id
+		WHERE u.username = #{username}
+	</select>
+
+	<select id="findList" parameterType="com.chenjx.sys.model.User" resultMap="User_ResultMap">
+		SELECT <include refid="Base_Select_SQL" />
+		FROM sys_users u
+		<where>
+			<if test="username!=null and username!=''">
+				AND username=#{username}
+			</if>
+			<if test="password!=null and password!=''">
+				AND password LIKE #{password}
+			</if>
+			<if test="salt!=null and salt!=''">
+				AND salt=#{salt}
+			</if>
+		</where>
+	</select>
+</mapper>

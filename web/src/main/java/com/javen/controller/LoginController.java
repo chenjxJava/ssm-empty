@@ -6,6 +6,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.chenjx.sys.model.User;
+import com.chenjx.sys.service.UserService;
+import common.entity.WebResultEntity;
+import common.utils.password.PasswordHelper;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.ExcessiveAttemptsException;
 import org.apache.shiro.authc.IncorrectCredentialsException;
@@ -20,10 +24,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.chenjx.common.entity.WebResultEntity;
-import com.chenjx.common.utils.PasswordHelper;
-import com.javen.sys.model.User;
-import com.javen.sys.service.UserService;
 
 @Controller  
 @RequestMapping("/login")
@@ -59,6 +59,10 @@ public class LoginController {
         //shiro是将用户录入的登录名和密码（未加密）封装到token对象中
         String userName = user.getUsername();
         String password = user.getPassword();
+
+        //User dbUser = userService.findUserByUsername(userName);
+        //boolean b = new PasswordHelper().checkPassword(password, dbUser.getPassword(), dbUser.getSalt());
+
         UsernamePasswordToken token = new UsernamePasswordToken(userName,password);
 
         try{

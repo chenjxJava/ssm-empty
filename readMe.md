@@ -2,10 +2,10 @@
 	ssm
  		|___common
  		|___service
- 		|___web
+ 		|___webW
  		
 ##【权限管理】
-		|user
+		|userWWW
 		|role
 		|permission
 		

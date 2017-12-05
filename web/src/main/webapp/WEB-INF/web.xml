@@ -61,7 +61,7 @@
     <!--验证码-->
     <servlet>
         <servlet-name>IdentityServlet</servlet-name>
-        <servlet-class>com.javen.servlet.IdentityServlet</servlet-class>
+        <servlet-class>javen.servlet.IdentityServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>IdentityServlet</servlet-name>

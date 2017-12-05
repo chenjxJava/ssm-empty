@@ -1,6 +1,10 @@
 package com.javen.realm;
 
 
+import com.chenjx.sys.model.Permissions;
+import com.chenjx.sys.model.Role;
+import com.chenjx.sys.model.User;
+import com.chenjx.sys.service.UserService;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -12,11 +16,6 @@ import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import com.javen.sys.model.Permissions;
-import com.javen.sys.model.Role;
-import com.javen.sys.model.User;
-import com.javen.sys.service.UserService;
 
 public class AuthRealm extends AuthorizingRealm  {
 

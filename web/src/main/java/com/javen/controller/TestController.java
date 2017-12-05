@@ -5,6 +5,9 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.chenjx.sys.model.Response;
+import com.chenjx.sys.model.User;
+import common.utils.FreeMarkerUtil;
 import org.apache.shiro.SecurityUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,9 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.chenjx.common.utils.FreeMarkerUtil;
-import com.javen.sys.model.Response;
-import com.javen.sys.model.User;
 
 @Controller
 @RequestMapping("/chenjx")

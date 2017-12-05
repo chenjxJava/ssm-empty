@@ -44,7 +44,7 @@
                 /login/** = anon
                 /center/** = anon
                 /chenjx/** = authc
-                /user/** = authc,roles[admin]
+                /user/** = authc
                 /test/** = authc,perms[测试用的lkkk]
                 /** = authc
             </value>
