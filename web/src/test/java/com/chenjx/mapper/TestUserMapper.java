@@ -41,14 +41,20 @@ public class TestUserMapper {
     @Test
     public void testUpdate() {
         User entity = new User();
-        entity.setUsername("cs001");
+        entity.setId(1L);
+        entity.setUsername("admin");
+
+        Map<String, Object> map = new PasswordHelper().generatePassword(MD5.md5("admin"));
+        entity.setPassword(map.get("password").toString());
+        entity.setSalt(map.get("salt").toString());
+
         userMapper.update(entity);
     }
 
     @Test
     public void testLogin() {
-        String password = MD5.md5("123456");
-        User record = userMapper.findUserByUsername("cs002");
+        String password = MD5.md5("admin");
+        User record = userMapper.findUserByUsername("admin");
         boolean b = new PasswordHelper().checkPassword(password,
                 record.getPassword(), record.getSalt());
         System.out.println(b);

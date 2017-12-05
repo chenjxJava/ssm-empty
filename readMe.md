@@ -2,12 +2,14 @@
 	ssm
  		|___common
  		|___service
- 		|___webW
+ 		|___web
  		
 ##【权限管理】
-		|userWWW
+		|user
 		|role
 		|permission
+		
+> 用户：cs001,123456;cs002,123456;admin,admin;
 		
 ##【url】
 		1.首页

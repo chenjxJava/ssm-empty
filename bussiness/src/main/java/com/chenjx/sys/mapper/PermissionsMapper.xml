@@ -76,5 +76,11 @@
 		</where>
 	</select>
 
-
+	<insert id="relatRole">
+		INSERT INTO sys_role_permissions (roleId, permissionsId)
+		VALUES
+		<foreach collection="permIds" item="permId" separator=",">
+			(#{roleId},#{permId})
+		</foreach>;
+	</insert>
 </mapper>

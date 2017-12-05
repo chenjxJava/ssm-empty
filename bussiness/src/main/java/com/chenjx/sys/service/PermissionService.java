@@ -19,4 +19,6 @@ public interface PermissionService {
 
     Boolean update(Permissions entity);
 
+    void relatRole(List<String> permIds, String roleId);
+
 }

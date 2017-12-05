@@ -1,5 +1,6 @@
 package com.chenjx.mapper;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.chenjx.sys.dao.RoleMapper;
@@ -44,6 +45,17 @@ public class TestRoleMapper {
 	public void testFind() {
 		List<Role> cs001 = mapper.findRoleByUsername("cs001");
 		System.out.println(cs001);
+	}
+
+	@Test
+	public void testrelatRole() {
+		ArrayList<String> roleIds = new ArrayList<>();
+		roleIds.add("1");
+		roleIds.add("2");
+		roleIds.add("3");
+		roleIds.add("4");
+
+		mapper.relatUser(roleIds, "3");
 	}
 }
 

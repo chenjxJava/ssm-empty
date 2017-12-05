@@ -2,6 +2,7 @@ package com.chenjx.sys.dao;
 
 
 import com.chenjx.sys.model.Role;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -21,4 +22,6 @@ public interface RoleMapper {
 	List<Role> findAllList();
 
 	Integer update(Role entity);
+
+	void relatUser(@Param("roleIds") List<String> roleIds, @Param("userId") String userId);
 }

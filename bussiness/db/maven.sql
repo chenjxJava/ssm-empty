@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50527
 File Encoding         : 65001
 
-Date: 2017-12-05 23:08:36
+Date: 2017-12-05 23:26:53
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -93,7 +93,7 @@ CREATE TABLE `sys_users` (
 -- ----------------------------
 -- Records of sys_users
 -- ----------------------------
-INSERT INTO `sys_users` VALUES ('1', 'chenjx', 'ed1083dc86ce013a774de81574e036a2', '4f0810debf9fb93f304410f921447222');
+INSERT INTO `sys_users` VALUES ('1', 'admin', 'fc197889023152302b756494b5f0a44a', 'bd65ddebf20a5b653e1504f3899d2133');
 INSERT INTO `sys_users` VALUES ('2', 'cs001', '9a25dfa08d939d0511e2146385306a53', '6ee7be32da00d252c40de98383578a39');
 INSERT INTO `sys_users` VALUES ('3', 'cs002', 'f1768b3f0c8e08a2f185effcf058927c', 'e858b90bc32063c2c09de6ee950650b8');
 

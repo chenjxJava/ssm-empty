@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.ArrayList;
+
 
 /**
  * @Author: chenjx
@@ -26,7 +28,7 @@ public class TestPermissionMapper {
 	public void testInsert() {
 		Permissions entity = new Permissions();
 		entity.setAvailable("1");
-		entity.setPermission("user:add");
+		entity.setPermission("app:delete");
 		entity.setDescription("用户增加权限");
 		mapper.insert(entity);
 	}
@@ -34,8 +36,20 @@ public class TestPermissionMapper {
 	@Test
 	public void testUpdate() {
 		Permissions entity = new Permissions();
-		entity.setDescription("cs001");
+		entity.setId(7L);
+		entity.setDescription("app删除权限");
 		mapper.update(entity);
+	}
+
+	@Test
+	public void testrelatRole() {
+		ArrayList<String> permIds = new ArrayList<>();
+		permIds.add("1");
+		permIds.add("2");
+		permIds.add("3");
+		permIds.add("4");
+
+		mapper.relatRole(permIds, "33");
 	}
 
 }

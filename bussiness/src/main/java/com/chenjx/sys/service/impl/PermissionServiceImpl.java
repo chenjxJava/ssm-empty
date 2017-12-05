@@ -38,4 +38,8 @@ public class PermissionServiceImpl implements PermissionService {
     public Boolean update(Permissions entity) {
         return dao.update(entity)>0;
     }
+
+    public void relatRole(List<String> roleIds, String userId) {
+        dao.relatRole(roleIds, userId);
+    }
 }

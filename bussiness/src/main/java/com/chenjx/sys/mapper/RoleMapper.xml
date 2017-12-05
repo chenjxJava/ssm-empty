@@ -92,4 +92,12 @@
 		LEFT JOIN sys_permissions p on rp.permissions_id = p.id
 		WHERE u.username = #{username}
 	</select>
+
+	<insert id="relatUser">
+		INSERT INTO sys_user_role (userId, roleId)
+		VALUES
+		<foreach collection="roleIds" item="roleId" separator=",">
+			(#{userId},#{roleId})
+		</foreach>;
+	</insert>
 </mapper>
