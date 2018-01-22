@@ -28,3 +28,9 @@
   		</dependency>
 2.添加spring-context-jedis.xml(需要加载redis.config)
 3.RedisDemo、JedisPoolDemo(spring管理)
+
+4.quartz
+方案一：
+  MainTest类运行。自动注入有问题
+方案二：
+  
