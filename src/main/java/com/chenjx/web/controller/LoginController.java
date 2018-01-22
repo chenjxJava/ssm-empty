@@ -1,4 +1,4 @@
-package com.javen.controller;
+package com.chenjx.web.controller;
 
 import java.util.Map;
 
@@ -6,10 +6,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.chenjx.sys.model.User;
-import com.chenjx.sys.service.UserService;
-import common.entity.WebResultEntity;
-import common.utils.password.PasswordHelper;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.ExcessiveAttemptsException;
 import org.apache.shiro.authc.IncorrectCredentialsException;
@@ -24,19 +20,24 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.chenjx.common.entity.WebResultEntity;
+import com.chenjx.common.utils.password.PasswordHelper;
+import com.chenjx.sys.model.User;
+import com.chenjx.sys.service.UserService;
+
 
 @Controller  
 @RequestMapping("/login")
 // /user/**
 public class LoginController {
-	private static Logger log=LoggerFactory.getLogger(LoginController.class);
+	private static Logger log=LoggerFactory.getLogger(com.chenjx.web.inter.AppLoginController.class);
 	 @Autowired
 	 private UserService userService;
 
 	 private String CURRENT_USER_INFO = "current_user_info";
 
-	 @RequestMapping(value = "/register.html"/*, method = {RequestMethod.POST}*/)
-	 public void register(HttpServletRequest request, HttpServletResponse response, User user) { WebResultEntity result = new WebResultEntity();
+	 @RequestMapping(value = "/register.html", method = {RequestMethod.POST})
+	 public String register(HttpServletRequest request, HttpServletResponse response, User user) {
 		 String username = request.getParameter("username");
 		 String password = request.getParameter("password");
 		 PasswordHelper passwordHelper = new PasswordHelper();
@@ -44,17 +45,16 @@ public class LoginController {
 		 user.setPassword(generatePassword.get("password").toString());
 		 user.setSalt(generatePassword.get("salt").toString());
 		 userService.insert(user);
-		 result.setDataSucMessage("1","注册成功");
-		 result.printJson(result, response);
+		 return "login";
 	 }
 
-    @RequestMapping(value = "/login.html"/*, method = {RequestMethod.POST}*/)
+    @RequestMapping(value = "/login.html", method = {RequestMethod.POST})
     public void login(HttpServletRequest request, HttpServletResponse response, User user) throws Exception {
          /** shiro登录方式：根据用户名获取密码，密码为null非法用户；有密码检查是否用户填写的密码
          * 登录成功后无需往httpsession中存放当前用户，这样就跟web容器绑定，关联太紧密；它自己创建
          * subject对象，实现自己的session。这个跟web容器脱离，实现松耦合。*/
-        WebResultEntity result = new WebResultEntity();
         //调用shiro判断当前用户是否是系统用户
+        WebResultEntity result = new WebResultEntity();
         Subject subject = SecurityUtils.getSubject();   //得到当前用户
         //shiro是将用户录入的登录名和密码（未加密）封装到token对象中
         String userName = user.getUsername();
@@ -104,13 +104,12 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/logout.html", method = {RequestMethod.GET})
-    public void logout(HttpServletRequest request, HttpServletResponse response){
-        WebResultEntity result = new WebResultEntity();
+    public String logout(HttpServletRequest request, HttpServletResponse response){
         HttpSession session = request.getSession();
-        session.removeAttribute(CURRENT_USER_INFO);      //删除session
+        //删除session
+        session.removeAttribute(CURRENT_USER_INFO);
         SecurityUtils.getSubject().logout();
-        result.setDataSucMessage("1","登出成功");
-        result.printJson(result, response);
+        return "redirect:/center/toLogin.html";
     }
 
 
